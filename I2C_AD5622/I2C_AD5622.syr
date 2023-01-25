@@ -1,0 +1,482 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.61 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.61 secs
+ 
+--> Reading design: I2C_AD5622.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "I2C_AD5622.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "I2C_AD5622"
+Output Format                      : NGC
+Target Device                      : xc3s50a-5-tq144
+
+---- Source Options
+Top Module Name                    : I2C_AD5622
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "D:/Iust_master/1_1/VHDL/Project/Code/V.2/I2C_AD5622/I2C_AD5622.vhd" in Library work.
+Entity <i2c_ad5622> compiled.
+Entity <i2c_ad5622> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <I2C_AD5622> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <I2C_AD5622> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "D:/Iust_master/1_1/VHDL/Project/Code/V.2/I2C_AD5622/I2C_AD5622.vhd" line 50: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <Reset_Int>
+WARNING:Xst:819 - "D:/Iust_master/1_1/VHDL/Project/Code/V.2/I2C_AD5622/I2C_AD5622.vhd" line 83: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <Reset_Int>
+Entity <I2C_AD5622> analyzed. Unit <I2C_AD5622> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <I2C_AD5622>.
+    Related source file is "D:/Iust_master/1_1/VHDL/Project/Code/V.2/I2C_AD5622/I2C_AD5622.vhd".
+WARNING:Xst:646 - Signal <Data_Rx> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 18                                             |
+    | Transitions        | 29                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 19                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | state$and0000             (positive)           |
+    | Reset              | Reset_Int                 (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | ready                                          |
+    | Power Up State     | ready                                          |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8x1-bit ROM for signal <$mux0000> created at line 141.
+    Found 1-bit tristate buffer for signal <SDA>.
+    Found 8-bit register for signal <Address_RW>.
+    Found 1-bit 8-to-1 multiplexer for signal <Address_RW$mux0000> created at line 112.
+    Found 3-bit register for signal <Bit_counter>.
+    Found 3-bit subtractor for signal <Bit_counter$sub0000> created at line 203.
+    Found 10-bit register for signal <count>.
+    Found 10-bit adder for signal <count$addsub0000> created at line 63.
+    Found 1-bit register for signal <Enable_Int>.
+    Found 1-bit register for signal <RW_CTL_Int>.
+    Found 1-bit register for signal <RW_Int>.
+    Found 1-bit register for signal <SCL_Ena>.
+    Found 1-bit register for signal <SCL_Int>.
+    Found 10-bit comparator lessequal for signal <SCL_Int$cmp_le0000>.
+    Found 1-bit register for signal <SDA_clk>.
+    Found 10-bit comparator greatequal for signal <SDA_clk$cmp_ge0000>.
+    Found 10-bit comparator greatequal for signal <SDA_clk$cmp_ge0001>.
+    Found 10-bit comparator lessequal for signal <SDA_clk$cmp_le0000>.
+    Found 10-bit comparator lessequal for signal <SDA_clk$cmp_le0001>.
+    Found 1-bit register for signal <SDA_clk_prv>.
+    Found 8-bit comparator equal for signal <state$cmp_eq0001> created at line 199.
+    Found 1-bit register for signal <Tx>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 ROM(s).
+	inferred  29 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   6 Comparator(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Tristate(s).
+Unit <I2C_AD5622> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 8x1-bit ROM                                           : 1
+# Adders/Subtractors                                   : 2
+ 10-bit adder                                          : 1
+ 3-bit subtractor                                      : 1
+# Registers                                            : 11
+ 1-bit register                                        : 8
+ 10-bit register                                       : 1
+ 3-bit register                                        : 1
+ 8-bit register                                        : 1
+# Comparators                                          : 6
+ 10-bit comparator greatequal                          : 2
+ 10-bit comparator lessequal                           : 3
+ 8-bit comparator equal                                : 1
+# Multiplexers                                         : 1
+ 1-bit 8-to-1 multiplexer                              : 1
+# Tristates                                            : 1
+ 1-bit tristate buffer                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <state/FSM> on signal <state[1:18]> with one-hot encoding.
+-----------------------------------
+ State       | Encoding
+-----------------------------------
+ ready       | 000000000000000001
+ start       | 000000000000000010
+ command     | 000000000000000100
+ slave_ack1  | 000000000000001000
+ wr_8bit_1   | 000000000000100000
+ wr_8bit_2   | 000000001000000000
+ rd_8bit_1   | 000000000001000000
+ rd_8bit_2   | 001000000000000000
+ slave_ack2  | 000000000010000000
+ slave_ack3  | 000000010000000000
+ sack1_del   | 000000000000010000
+ sack2_del   | 000000000100000000
+ sack3_del   | 000000100000000000
+ master_ack1 | 000010000000000000
+ master_ack2 | 010000000000000000
+ mack1_del   | 000100000000000000
+ mack2_del   | 100000000000000000
+ stop        | 000001000000000000
+-----------------------------------
+WARNING:Xst:1293 - FF/Latch <Address_RW_5> has a constant value of 0 in block <I2C_AD5622>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Address_RW_6> has a constant value of 0 in block <I2C_AD5622>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Address_RW_7> has a constant value of 0 in block <I2C_AD5622>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# ROMs                                                 : 1
+ 8x1-bit ROM                                           : 1
+# Adders/Subtractors                                   : 2
+ 10-bit adder                                          : 1
+ 3-bit subtractor                                      : 1
+# Registers                                            : 29
+ Flip-Flops                                            : 29
+# Comparators                                          : 6
+ 10-bit comparator greatequal                          : 2
+ 10-bit comparator lessequal                           : 3
+ 8-bit comparator equal                                : 1
+# Multiplexers                                         : 1
+ 1-bit 8-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <Address_RW_5> has a constant value of 0 in block <I2C_AD5622>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Address_RW_6> has a constant value of 0 in block <I2C_AD5622>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Address_RW_7> has a constant value of 0 in block <I2C_AD5622>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <I2C_AD5622> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block I2C_AD5622, actual ratio is 7.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 44
+ Flip-Flops                                            : 44
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : I2C_AD5622.ngr
+Top Level Output File Name         : I2C_AD5622
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 7
+
+Cell Usage :
+# BELS                             : 119
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 9
+#      LUT2                        : 14
+#      LUT2_D                      : 1
+#      LUT2_L                      : 1
+#      LUT3                        : 23
+#      LUT3_D                      : 1
+#      LUT3_L                      : 6
+#      LUT4                        : 31
+#      LUT4_D                      : 5
+#      LUT4_L                      : 4
+#      MUXCY                       : 9
+#      MUXF5                       : 1
+#      VCC                         : 1
+#      XORCY                       : 10
+# FlipFlops/Latches                : 44
+#      FDC                         : 11
+#      FDCE                        : 18
+#      FDE                         : 11
+#      FDPE                        : 4
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 6
+#      IBUF                        : 3
+#      OBUF                        : 2
+#      OBUFT                       : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s50atq144-5 
+
+ Number of Slices:                       51  out of    704     7%  
+ Number of Slice Flip Flops:             44  out of   1408     3%  
+ Number of 4 input LUTs:                 97  out of   1408     6%  
+ Number of IOs:                           7
+ Number of bonded IOBs:                   7  out of    108     6%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 44    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+Reset_inv(Reset_inv1_INV_0:O)      | NONE(Bit_counter_0)    | 33    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 5.800ns (Maximum Frequency: 172.417MHz)
+   Minimum input arrival time before clock: 2.789ns
+   Maximum output required time after clock: 6.274ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.800ns (frequency: 172.417MHz)
+  Total number of paths / destination ports: 716 / 71
+-------------------------------------------------------------------------
+Delay:               5.800ns (Levels of Logic = 9)
+  Source:            count_1 (FF)
+  Destination:       SDA_clk (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: count_1 to SDA_clk
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.495   0.488  count_1 (count_1)
+     LUT1:I0->O            1   0.561   0.000  Madd_count_addsub0000_cy<1>_rt (Madd_count_addsub0000_cy<1>_rt)
+     MUXCY:S->O            1   0.523   0.000  Madd_count_addsub0000_cy<1> (Madd_count_addsub0000_cy<1>)
+     MUXCY:CI->O           1   0.065   0.000  Madd_count_addsub0000_cy<2> (Madd_count_addsub0000_cy<2>)
+     MUXCY:CI->O           1   0.065   0.000  Madd_count_addsub0000_cy<3> (Madd_count_addsub0000_cy<3>)
+     MUXCY:CI->O           1   0.065   0.000  Madd_count_addsub0000_cy<4> (Madd_count_addsub0000_cy<4>)
+     XORCY:CI->O           4   0.654   0.522  Madd_count_addsub0000_xor<5> (count_addsub0000<5>)
+     LUT3_L:I2->LO         1   0.561   0.102  SDA_clk_mux000147_SW0_SW0 (N21)
+     LUT4:I3->O            1   0.561   0.380  SDA_clk_mux000147_SW1 (N19)
+     LUT4:I2->O            1   0.561   0.000  SDA_clk_mux000174 (SDA_clk_mux0001)
+     FDE:D                     0.197          SDA_clk
+    ----------------------------------------
+    Total                      5.800ns (4.308ns logic, 1.492ns route)
+                                       (74.3% logic, 25.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 13 / 13
+-------------------------------------------------------------------------
+Offset:              2.789ns (Levels of Logic = 2)
+  Source:            Reset (PAD)
+  Destination:       Address_RW_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: Reset to Address_RW_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             8   0.824   0.709  Reset_IBUF (Reset_IBUF)
+     LUT3:I1->O            5   0.562   0.538  Address_RW_and00001 (Address_RW_and0000)
+     FDE:CE                    0.156          Address_RW_0
+    ----------------------------------------
+    Total                      2.789ns (1.542ns logic, 1.248ns route)
+                                       (55.3% logic, 44.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 5 / 3
+-------------------------------------------------------------------------
+Offset:              6.274ns (Levels of Logic = 2)
+  Source:            SCL_Int (FF)
+  Destination:       SCL (PAD)
+  Source Clock:      clk rising
+
+  Data Path: SCL_Int to SCL
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.495   0.465  SCL_Int (SCL_Int)
+     LUT2:I0->O            1   0.561   0.357  SCL1 (SCL_OBUF)
+     OBUF:I->O                 4.396          SCL_OBUF (SCL)
+    ----------------------------------------
+    Total                      6.274ns (5.452ns logic, 0.822ns route)
+                                       (86.9% logic, 13.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.21 secs
+ 
+--> 
+
+Total memory usage is 4529612 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
