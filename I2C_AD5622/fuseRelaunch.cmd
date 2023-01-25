@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "D:/Iust_master/1_1/VHDL/Project/Code/V.2/I2C_AD5622/I2C_TB_isim_beh.exe" -prj "D:/Iust_master/1_1/VHDL/Project/Code/V.2/I2C_AD5622/I2C_TB_beh.prj" "work.I2C_TB" 

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/Iust_master/1_1/VHDL/Tamrin/I2C_AD5622/I2C_TB_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="i2c_tb" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/i2c_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/uut/enable_int" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">enable_int</obj_property>
+      <obj_property name="ObjectShortName">enable_int</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/rw" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rw</obj_property>
+      <obj_property name="ObjectShortName">rw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/uut/address_rw" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">address_rw[7:0]</obj_property>
+      <obj_property name="ObjectShortName">address_rw[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/scl" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">scl</obj_property>
+      <obj_property name="ObjectShortName">scl</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff00ff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/uut/sda_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sda_clk</obj_property>
+      <obj_property name="ObjectShortName">sda_clk</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/uut/state" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/uut/bit_counter" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">bit_counter[2:0]</obj_property>
+      <obj_property name="ObjectShortName">bit_counter[2:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/sda" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sda</obj_property>
+      <obj_property name="ObjectShortName">sda</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/rw_ctl" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rw_ctl</obj_property>
+      <obj_property name="ObjectShortName">rw_ctl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/clk_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,2 @@
+vhdl work "I2C_AD5622.vhd"
+vhdl work "I2C_TB.vhd"

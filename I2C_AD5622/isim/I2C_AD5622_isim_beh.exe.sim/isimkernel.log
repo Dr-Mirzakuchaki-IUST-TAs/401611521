@@ -1,0 +1,28 @@
+Command line:
+   I2C_AD5622_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  62010
+
+Wed Jan 25 20:15:20 2023
+
+
+ Elaboration Time: 0.375 sec
+
+ Current Memory Usage: 5810.19 Meg
+
+ Total Signals          : 21
+ Total Nets             : 44
+ Total Signal Drivers   : 17
+ Total Blocks           : 3
+ Total Primitive Blocks : 3
+ Total Processes        : 6
+ Total Traceable Variables  : 16
+ Total Scalar Nets and Variables : 550
+
+ Total Simulation Time: 0.40625 sec
+
+ Current Memory Usage: 5810.19 Meg
+
+Wed Jan 25 20:15:26 2023
+
